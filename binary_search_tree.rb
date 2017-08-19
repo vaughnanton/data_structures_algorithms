@@ -26,9 +26,12 @@ def breadth_first_search(tree, value)
   visited = [tree]
   loop do
     return tree if tree.value == value
-    if tree.left_node && !visited.include?(tree.right_node)
-      queue.unshift(tree.right_node)
-      visited << node.right_node
+    if tree.left_node && !visited.include?(tree.left_node)
+      queue.unshift(tree.left_node)
+      visited << tree.left_node
+    elsif tree.right_node && !visited.include?(tree.right_node)
+      queue.unshift(tree.right_nod)
+      visited << tree.right_node
     elsif !queue.empty?
       tree = queue.pop
     else
