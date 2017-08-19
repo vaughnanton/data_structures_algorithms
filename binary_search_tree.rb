@@ -21,7 +21,20 @@ def build_tree
   root
 end
 
-def breadth_first_search
+def breadth_first_search(tree, value)
+  queue = []
+  visited = [tree]
+  loop do
+    return tree if tree.value == value
+    if tree.left_node && !visited.include?(tree.right_node)
+      queue.unshift(tree.right_node)
+      visited << node.right_node
+    elsif !queue.empty?
+      tree = queue.pop
+    else
+      nil
+    end
+  end
 end
 
 def depth_first_search
